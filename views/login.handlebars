@@ -151,14 +151,11 @@
                         <p id="profile-name" class="profile-name-card"></p>
                         <form class="form-signin" action="/users/login" method="POST">
                             <span id="reauth-email" class="reauth-email"></span>
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <input type="username" id="inputUsername" class="form-control" placeholder="Username" name="username"required autofocus>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password"required>
                             <div id="remember" class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="remember-me"> Remember me
-                                </label>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin" >Log in</button>
                         </form><!-- /form -->
                         <a href="/register" class="forgot-password">
                             Create new account.
