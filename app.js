@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var exphbs = require('express-handlebars');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
@@ -10,20 +9,18 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-
+var ejs = require('ejs');
 mongoose.connect('mongodb://localhost:27017/register');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 //init app 
 var app = express();
 
 //view engine
 app.set('views',path.join(__dirname,'views'));
-app.engine('handlebars',exphbs({defaultLayout:'layout'}));
-app.set('view engine','handlebars');
+app.set('view engine','ejs');
 
 //bodyParser middleware 
 app.use(bodyParser.json());
@@ -74,7 +71,6 @@ next();
 });
 
 app.use('/',routes);
-app.use('/users',users);
 
 //set port
 app.set('port',(process.env.PORT || 3000));
