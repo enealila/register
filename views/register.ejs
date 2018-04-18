@@ -20,8 +20,9 @@
         <style>
                 body, html{
                      height: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+                     background-repeat: no-repeat;
+                     background-color: #d3d3d3;
+                     font-family: 'Oxygen', sans-serif;
                 }
                 
                 .main{
@@ -87,15 +88,15 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="">
+			<div class="row main">
 				<div class="panel-heading">
 	               <div class="panel-title text-center">
-	               		<h1 style="text-align:center"class="title">Create Account</h1>
+	               		<h1 class="title">Create Account</h1>
 	               		<hr />
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="POST" action="/users/register">
+					<form class="form-horizontal" method="POST" action="/register">
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Name</label>
@@ -151,7 +152,7 @@
 							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
-				            <a href="/users/login">Login</a>
+				            <a href="/login">Login</a>
 				         </div>
 					</form>
 				</div>
