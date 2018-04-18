@@ -86,30 +86,6 @@ passport.use(new LocalStrategy(
    	});
    });
   }));
-
-// passport.use(new LocalStrategy(
-//     function(username, password, done) {
-//     //match username
-//     let query = {username:username};
-//     User.findOne(query,function(err, user){
-//         if(err) throw err;
-//         if(!user){
-//             return done(null,false,{message:'No user'});
-//         }
-
-//         //match password
-//         bcrypt.compare(password,user.password,function(err,isMatch){
-//         if(err) throw err;
-//         if(isMatch){
-//             return done(null,user);
-//         }else{
-//             return done(null,false,{message:'Wrong pass'});
-//         }
-//         });
-//     })
-//     }));
-
-
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
